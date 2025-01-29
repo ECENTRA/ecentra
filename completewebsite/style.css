@@ -1,0 +1,37 @@
+.fix{
+   position: fixed;
+   z-index: ;
+}
+
+.large-header {
+   position: relative;
+   width: 100%;
+   overflow-x: hidden;
+   background-size: cover;
+}
+
+.large-header {
+   background:  linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../img/bg1.png");
+   background-size: 100% auto;
+   background-position: center center;
+   width: 100%;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+}
+
+.homebg{
+   background: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+   .large-header {
+      background-size: auto 100%;
+      background-attachment: fixed;
+   }
+   .fix{
+      display: none;
+   }
+
+
+}

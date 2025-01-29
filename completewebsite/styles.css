@@ -1,0 +1,776 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+@font-face {
+  font-family: AlienWars;
+  src: url("fonts/batmfa__.ttf");
+}
+@font-face {
+  font-family: poppinsLight;
+  src: url("fonts/GODOFWAR.ttf");
+}
+@font-face {
+  font-family: poppinsSemiBold;
+  src: url("fonts/HOMOARAK.ttf");
+}
+@font-face {
+  font-family: poppinsBold;
+  src: url("fonts/ParryHotter.ttf");
+}
+@font-face {
+  font-family: easports;
+  src: url("fonts/sports_ea_sports.ttf");
+}
+@font-face {
+  font-family: AmericanCaptain-MdEY;
+  src: url("fonts/AmericanCaptain-MdEY.otf");
+}
+@font-face {
+  font-family: Avengeance-E1zj;
+  src: url("fonts/Avengeance-E1zj.otf");
+}
+@font-face {
+  font-family: Blade2-oveV;
+  src: url("fonts/Blade2-oveV.ttf");
+}
+@font-face {
+  font-family: Pasajero-95AL;
+  src: url("fonts/Pasajero-95AL.ttf");
+}
+@font-face {
+  font-family: StarJedi-DGRW;
+  src: url("fonts/StarJedi-DGRW.ttf");
+}
+@font-face {
+  font-family: TrenchThin-16R0;
+  src: url("fonts/TrenchThin-16R0.otf");
+}
+@font-face {
+  font-family: EA Logo;
+  src: url("fonts/EA Logo.ttf");
+}
+@font-face {
+  font-family: VanHelsing-3lv8;
+  src: url("fonts/VanHelsing-3lv8.ttf");
+}
+
+body {
+  background: black;
+}
+
+#loader{
+    background:#000 url('loader.gif')no-repeat center center !important;
+		back
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    overflow:visible;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #334;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #03c0ff,#113);
+  border-radius: 5px;
+  transition-duration: .2s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #13d0ff,#334);
+}
+
+.site-session, .container, .container-fluid{
+  min-height: 100vh;
+}
+.container-fluid{
+  padding-top: 90px;
+  padding-bottom: 50px;
+}
+.container{
+  padding-top: 90px;
+  padding-bottom: 50px;
+}
+.container h1,h2,h3,h4, .container-fluid h1,h2,h3,h4{
+  font-family: poppinsBold;
+}
+h1{
+  font-size: 30px;
+}
+
+
+.path {
+      stroke-dasharray: 1400;
+      stroke-dashoffset: 1400;
+      animation: dash 1.7s linear alternate infinite;
+      -webkit-animation: dash 1.7s linear alternate infinite;
+      -moz-animation: dash 1.7s linear alternate infinite;
+      -ms-animation: dash 1.7s linear alternate infinite;
+      -o-animation: dash 1.7s linear alternate infinite;
+    }
+
+
+@keyframes dash {
+      from {
+        stroke-dashoffset: 1500;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+}
+
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  content: '';
+}
+
+body {
+  font-size: 100%;
+  font-family: "PT Sans", sans-serif;
+  color: #ddd;
+  background-color: ;
+}
+
+a {
+  color: #1e6074;
+  text-decoration: none;
+}
+
+/* --------------------------------
+
+Main components
+
+-------------------------------- */
+html, body {
+  min-height: 100vh;
+}
+
+header {
+  z-index: 3;
+}
+
+.home{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-block;
+  width: 500px;
+  height: 200px;
+  margin-left: -250px;
+  margin-top: 220px;
+}
+.heading{
+  display: inline-block;
+  font-family: EA Logo;
+  font-size: 70px;
+  text-align: center;
+  font-weight: 800;
+	letter-spacing: 8px;
+  font-size: 51px;
+  color: white;
+  background: -webkit-linear-gradient(currentcolor,silver,lightgreen);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.date{
+  font-family: AlienWars;
+  margin:-30px;
+	background: -webkit-linear-gradient(white 30%,red);
+	font-weight: 900;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 17px;
+}
+
+.navi .regi{
+  font-family: poppinsSemiBold;
+  font-size: 15px;
+  display: inline-block;
+  border-radius: 8px;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 15px;
+  position: absolute;
+  top: 20px;
+  right: 110px;
+  z-index: 9;
+  transition-duration: 0.2s;
+}
+.navi .regi:hover{
+  border-color: #39f;
+  background-color: rgba(150,170,255,0.2);
+  text-decoration: none !important;
+}
+
+      .cornernav1{
+        position: absolute;
+        top: -40px;
+        left: 0px;
+        width: 450px;
+      }
+      .cornernav2{
+        position: absolute;
+        top: -40px;
+        right: 0px;
+        width: 450px;
+        transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+      .cornernav3{
+        position: absolute;
+        bottom: -40px;
+        left: 0px;
+        width: 450px;
+        -webkit-transform: scaleY(-1);
+        transform: scaleY(-1);
+      }
+      .cornernav4{
+        position: absolute;
+        bottom: -40px;
+        right: 0px;
+        width: 450px;
+        -webkit-transform:
+        scale(-1,-1);
+        transform: scale(-1,-1);
+      }
+      .toplogo1{
+        position: absolute;
+        top: 0px;
+        left: 27px;
+        height: 70px;
+      }
+      .toplogo2{
+        position: absolute;
+        top: 0px;
+        left: 27px;
+        height: 70px;
+        display: none;
+      }
+      .centergear{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        margin-top: -250px;
+        margin-left: -250px;
+        background-image: url("./img/logo1-min.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 150px;
+      }
+
+      .gear1{
+        width: 500px;
+        height: 500px;
+        animation: rotation 20s infinite linear;
+      }
+      .bgc{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        background-color: black;
+      }
+      .bgcircle{
+        height: 200vh;
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        margin-left: -100vh;
+        margin-top: -100vh;
+        animation: rotation 150s infinite reverse linear;
+      }
+      .circle1{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+        animation: rotation 10s infinite reverse linear;
+      }
+
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(359deg);
+          -webkit-transform: rotate(359deg);
+          -moz-transform: rotate(359deg);
+        }
+      }
+
+    @media screen and (max-width: 900px){
+      .ebs{
+        display: none;
+      }
+      .centergear{
+        margin-top: -290px;
+        transform: scale(0.7);
+      }
+      .title{
+        margin-top: 130px;
+      }
+      .heading{
+        font-size: 45px;
+      }
+    }
+
+
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  font-family: poppinsSemiBold;
+}
+
+
+.filter {
+  margin: 20px 0 10px;
+}
+
+.filter a {
+  display: inline-block;
+  padding: 10px;
+  width: 120px;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 8px;
+  position: relative;
+  margin-right: 2px;
+  margin-bottom: 6px;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: poppinsLight;
+  font-size: 15px;
+  text-shadow: 1px 1px 6px black;
+  background: linear-gradient(to right bottom, rgba(230,230,255,0.5), rgba(0,0,5,0));
+}
+
+.boxes .btn-3:before,.boxes .btn-3:after{
+  border-color: transparent;
+}
+.boxes a{
+  background-color: black;
+  background-size: 100% 100% !important;
+  border-style: inset;
+}
+.boxes .btn-3 .vws{
+  padding: 0px 10px;
+}
+.boxes .btn-3:hover .vws{
+  opacity: 1;
+  bottom: 40px;
+}
+
+.filter a.active {
+  border-color: white;
+  transition-duration: .2s;
+  background: none;
+}
+
+.is-animated {
+  -webkit-animation: .6s zoom-in;
+          animation: .6s zoom-in;
+}
+
+@-webkit-keyframes zoom-in {
+  0% {
+   -webkit-transform: scale(.1);
+           transform: scale(.1);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+   -webkit-transform: scale(.1);
+           transform: scale(.1);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+form{
+  margin-top: 20px;
+}
+form *{
+  font-family: poppinsLight;
+}
+.form-group{
+  font-family: poppinsLight;
+  margin-top: 7px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  height: 77px;
+}
+.form-group label{
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
+.form-control{
+  height: auto;
+}
+.form-group input[type=text]{
+  background-color: rgba(0,0,0,0.1);
+  padding: 12px 20px;
+  color: white;
+  border-radius: 30px;
+  border: 1.4px solid #3af;
+  transition-duration: .2s;
+  font-size: 16px;
+}
+
+.form-group input[type=text]:hover{
+  background-color: rgba(0,0,0,0.2);
+}
+}
+.form-group input[type=text]:focus{
+  background-color: rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px 0px #3af;
+  outline: none;
+}
+
+.form-group select{
+  background-color: rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  border: 1.4px solid #3af;
+  transition-duration: .2s;
+  font-size: 16px;
+}
+.form-group select option{
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+.form-group .submitbtn{
+  background: linear-gradient(to right bottom, rgba(30,150,230,0.2), rgba(30,180,240,0.2));
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 16px 23px;
+  width: auto;
+  border: 1px solid #3af;
+  color: white;
+  font-family: poppinsSemiBold;
+  transition-duration: .2s;
+}
+.form-group .submitbtn:hover{
+  background: linear-gradient(to right bottom, rgba(30,150,230,0.1), rgba(30,180,240,0.1));
+}
+
+.form-groupx label{
+  margin-bottom: 12px;
+  margin-left: 10px;
+}
+.form-groupx textarea{
+  background-color: rgba(0,0,0,0.1);
+  border: 1.5px solid #3af;
+  color: white;
+  border-radius: 10px;
+}
+.form-groupx textarea:hover, .form-group textarea:focus{
+  background-color: rgba(0,0,0,0.2);
+}
+.form-groupx textarea:focus{
+  box-shadow: 0px 0px 10px 0px #3af;
+  outline: none;
+}
+
+/* Customize the label (the container) */
+.options {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  padding-left: 35px !important;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 10px;
+}
+
+/* Hide the browser's default radio button */
+.options input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1.5px solid #3af;
+  border-radius: 50%;
+  transition-duration: .3s;
+}
+
+/* On mouse-over, add a grey background color */
+.options:hover input ~ .checkmark {
+  background-color: rgba(200,200,200,0.3);
+}
+
+/* When the radio button is checked, add a blue background */
+.options input:checked ~ .checkmark {
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.options input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.options .checkmark:after {
+  top: 7.5px;
+  left: 7.5px;
+  width: 8.5px;
+  height: 8.5px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+
+/*checkboxes*/
+.options2 {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  padding-left: 35px !important;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-right: 10px;
+}
+
+/* Hide the browser's default checkbox */
+.options2 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1.5px solid #3af;
+  transition-duration: .3s;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.options2:hover input ~ .checkmark2 {
+  background-color: rgba(200,200,200,0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.options2 input:checked ~ .checkmark2 {
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark2:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.options2 input:checked ~ .checkmark2:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.options2 .checkmark2:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.sponsors{
+  width: 100%;
+  color: white;
+  font-family: poppinsSemiBold;
+  text-decoration: none;
+}
+.spb{
+  width: 250px;
+  height: 270px;
+  display: inline-block;
+  padding: 10px;
+  margin: 20px 0px;
+}
+.spb p{
+  margin-top: 10px;
+  font-size: 20px;
+}
+.sponsors img{
+  width: 230px;
+}
+
+.datacont{
+  font-family: poppinsLight;
+
+
+}
+.datacont .row{
+  background-color: rgba(30,150,230,0.3);
+  border: 2px solid #99f;
+  border-radius: 5px;
+  margin: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.datacont h1{
+  margin-bottom: 15px;
+}
+.datacont h3{
+  font-family: poppinsSemiBold;
+  font-size: 20px;
+  margin: 30px 2px 15px;
+}
+.datacont p{
+  line-height: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.datacont ul{
+  padding-left: 30px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.datacont div{
+  padding: 8px;
+}
+.datacont ul li{
+  padding-left: 10px;
+  list-style-type: none;
+  margin-top: 10px;
+  line-height: 20px;
+}
+.datacont ul li i{
+  padding-right: 10px;
+}
+.datacont span{
+  line-height: 30px;
+}
+
+.an{
+  transition-duration: .4s;
+  animation: movetop .4s 1;
+  opacity: 1;
+}
+
+@keyframes movetop {
+  from {
+    padding-top: 30px;
+    opacity: 0;
+  }
+  to {
+    padding-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes zoomz {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .bgcircle{
+        height: 137vh;
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        margin-left: -69vh;
+        margin-top: -75vh;
+        animation: rotation 150s infinite reverse linear;
+      }
+      .heading{
+        font-size: 30px;
+        padding-bottom: 10px;
+      }
+  .comp{
+    width:100%;
+    float: left;
+    padding:0px 0px 10px 0px;
+
+  }
+}
+@media only screen and (min-width: 1170px) {
+
+}

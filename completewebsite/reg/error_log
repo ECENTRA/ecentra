@@ -1,0 +1,93 @@
+[01-Jan-2020 07:05:54 UTC] PHP Parse error:  syntax error, unexpected '$email' (T_VARIABLE) in /home/ecentrai/public_html/reg/mail.php on line 5
+[01-Jan-2020 07:05:59 UTC] PHP Parse error:  syntax error, unexpected '$email' (T_VARIABLE) in /home/ecentrai/public_html/reg/mail.php on line 5
+[01-Jan-2020 07:06:19 UTC] PHP Parse error:  syntax error, unexpected '$email' (T_VARIABLE) in /home/ecentrai/public_html/reg/mail.php on line 5
+[01-Jan-2020 07:07:06 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ecentrai/public_html/reg/mail.php on line 7
+[01-Jan-2020 07:07:13 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ecentrai/public_html/reg/mail.php on line 7
+[01-Jan-2020 07:09:21 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ecentrai/public_html/reg/mailer.php on line 7
+[01-Jan-2020 07:16:33 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ecentrai/public_html/reg/mailer.php on line 7
+[01-Jan-2020 07:23:14 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/ecentrai/public_html/reg/mailer.php on line 7
+[01-Jan-2020 08:48:49 UTC] PHP Parse error:  syntax error, unexpected ''/home/ecentrai/public_html/PH' (T_ENCAPSED_AND_WHITESPACE) in /home/ecentrai/public_html/reg/mailer.php on line 7
+[01-Jan-2020 08:54:09 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 08:54:39 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 08:54:55 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 08:55:14 UTC] PHP Parse error:  syntax error, unexpected '.' in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 08:55:49 UTC] PHP Notice:  Undefined variable: email in /home/ecentrai/public_html/reg/mailer.php on line 2
+[01-Jan-2020 08:55:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function location() in /home/ecentrai/public_html/reg/mailer.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 08:56:17 UTC] PHP Notice:  Undefined variable: email in /home/ecentrai/public_html/reg/mailer.php on line 2
+[01-Jan-2020 08:56:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function location() in /home/ecentrai/public_html/reg/mailer.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/mailer.php on line 8
+[01-Jan-2020 09:13:49 UTC] PHP Warning:  include_once(class.smtp.php): failed to open stream: No such file or directory in /home/ecentrai/public_html/PHPMailer/class.phpmailer.php on line 515
+[01-Jan-2020 09:13:49 UTC] PHP Warning:  include_once(): Failed opening 'class.smtp.php' for inclusion (include_path='.:/opt/alt/php74/usr/share/pear') in /home/ecentrai/public_html/PHPMailer/class.phpmailer.php on line 515
+[01-Jan-2020 09:13:49 UTC] PHP Fatal error:  Uncaught Error: Class 'SMTP' not found in /home/ecentrai/public_html/PHPMailer/class.phpmailer.php:583
+Stack trace:
+#0 /home/ecentrai/public_html/PHPMailer/class.phpmailer.php(519): PHPMailer->SmtpConnect()
+#1 /home/ecentrai/public_html/PHPMailer/class.phpmailer.php(412): PHPMailer->SmtpSend('Date: Wed, 1 Ja...', '--b1_667dbbd099...')
+#2 /home/ecentrai/public_html/reg/mailer.php(21): PHPMailer->Send()
+#3 {main}
+  thrown in /home/ecentrai/public_html/PHPMailer/class.phpmailer.php on line 583
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: name1 in /home/ecentrai/public_html/reg/ar.php on line 7
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: id1 in /home/ecentrai/public_html/reg/ar.php on line 8
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: name2 in /home/ecentrai/public_html/reg/ar.php on line 9
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: id2 in /home/ecentrai/public_html/reg/ar.php on line 10
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: name3 in /home/ecentrai/public_html/reg/ar.php on line 11
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: id3 in /home/ecentrai/public_html/reg/ar.php on line 12
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: name4 in /home/ecentrai/public_html/reg/ar.php on line 13
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: id4 in /home/ecentrai/public_html/reg/ar.php on line 14
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: name5 in /home/ecentrai/public_html/reg/ar.php on line 15
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: id5 in /home/ecentrai/public_html/reg/ar.php on line 16
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: email in /home/ecentrai/public_html/reg/ar.php on line 17
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: phone in /home/ecentrai/public_html/reg/ar.php on line 18
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: acc in /home/ecentrai/public_html/reg/ar.php on line 19
+[08-Jan-2020 13:01:50 UTC] PHP Notice:  Undefined index: college in /home/ecentrai/public_html/reg/ar.php on line 20
+[08-Jan-2020 13:35:10 UTC] PHP Notice:  Undefined variable: code in /home/ecentrai/public_html/reg/preevent.php on line 3
+[08-Jan-2020 13:36:00 UTC] PHP Notice:  Undefined variable: code in /home/ecentrai/public_html/reg/preevent.php on line 3
+[08-Jan-2020 13:36:13 UTC] PHP Notice:  Undefined variable: code in /home/ecentrai/public_html/reg/preevent.php on line 3
+[08-Jan-2020 13:36:30 UTC] PHP Notice:  Undefined variable: code in /home/ecentrai/public_html/reg/preevent.php on line 3
+[11-Jan-2020 08:06:40 UTC] PHP Notice:  Undefined index: name in /home/ecentrai/public_html/reg/preevent.php on line 7
+[11-Jan-2020 08:06:40 UTC] PHP Notice:  Undefined index: regno in /home/ecentrai/public_html/reg/preevent.php on line 8
+[11-Jan-2020 08:06:52 UTC] PHP Notice:  Undefined index: name in /home/ecentrai/public_html/reg/preevent.php on line 7
+[11-Jan-2020 08:06:52 UTC] PHP Notice:  Undefined index: regno in /home/ecentrai/public_html/reg/preevent.php on line 8
+[11-Jan-2020 08:07:46 UTC] PHP Notice:  Undefined index: name in /home/ecentrai/public_html/reg/preevent.php on line 7
+[11-Jan-2020 08:07:46 UTC] PHP Notice:  Undefined index: regno in /home/ecentrai/public_html/reg/preevent.php on line 8
+[11-Jan-2020 08:08:00 UTC] PHP Notice:  Undefined index: name in /home/ecentrai/public_html/reg/preevent.php on line 7
+[11-Jan-2020 08:08:00 UTC] PHP Notice:  Undefined index: regno in /home/ecentrai/public_html/reg/preevent.php on line 8
+[11-Jan-2020 08:15:24 UTC] PHP Notice:  Undefined variable: sql in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 08:15:24 UTC] PHP Warning:  mysqli::query(): Empty query in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 08:15:32 UTC] PHP Notice:  Undefined variable: sql in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 08:15:32 UTC] PHP Warning:  mysqli::query(): Empty query in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 08:16:23 UTC] PHP Notice:  Undefined variable: sql in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 08:16:23 UTC] PHP Warning:  mysqli::query(): Empty query in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 17:27:22 UTC] PHP Notice:  Undefined variable: status in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 17:27:59 UTC] PHP Notice:  Undefined variable: status in /home/ecentrai/public_html/reg/preevent.php on line 13
+[11-Jan-2020 17:42:01 UTC] PHP Fatal error:  Can't use method return value in write context in /home/ecentrai/public_html/reg/preevent.php on line 14
+[11-Jan-2020 17:50:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function query() in /home/ecentrai/public_html/reg/preevent.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/preevent.php on line 15
+[11-Jan-2020 17:50:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function query() in /home/ecentrai/public_html/reg/preevent.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/preevent.php on line 15
+[11-Jan-2020 17:51:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function query() in /home/ecentrai/public_html/reg/preevent.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/preevent.php on line 15
+[11-Jan-2020 17:51:35 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function query() in /home/ecentrai/public_html/reg/preevent.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/preevent.php on line 15
+[11-Jan-2020 18:41:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function query() in /home/ecentrai/public_html/reg/preevent.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/ecentrai/public_html/reg/preevent.php on line 13
+[13-Jan-2020 16:54:05 UTC] PHP Notice:  Undefined variable: branch2 in /home/ecentrai/public_html/reg/ar.php on line 36
+[14-Jan-2020 04:07:45 UTC] PHP Notice:  Undefined index: payment in /home/ecentrai/public_html/reg/ar.php on line 26
+[14-Jan-2020 04:07:46 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/ecentrai/public_html/reg/ar.php on line 26
+[14-Jan-2020 04:07:46 UTC] PHP Notice:  Undefined index: payment in /home/ecentrai/public_html/reg/ar.php on line 27
+[14-Jan-2020 04:07:46 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/ecentrai/public_html/reg/ar.php on line 27
+[14-Jan-2020 04:07:46 UTC] PHP Notice:  Undefined variable: branch2 in /home/ecentrai/public_html/reg/ar.php on line 39
