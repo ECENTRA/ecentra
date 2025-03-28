@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;  /* Ensure the body takes the full viewport height */
+            overflow: hidden; /* Prevent body scrolling */
+            margin: 0;
+        }
+        iframe {
+            width: 100vw;  /* Full width of the viewport */
+            height: 100vh; /* Full height of the viewport */
+            border: none;  /* Remove border */
+        }
+    </style>
 </head>
 <body>
-    <!--
-        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQEX1Azlofd-Kq5oLD15Jpp7DNbgpemyhsKqt3-_zhsa8r02rEXGGHWucXlAYMB0l280ODMq55HI8Fw/pubchart?oid=442685360&amp;format=interactive"></iframe>
-
-        -->
-    <iframe src="https://script.google.com/macros/s/AKfycbwLi8UX-aBjwUe9pStJmL5CEemdFLD6Z3WPtyRW5ecWe4SojSYBUvsKQAKNEGSxRUpXVA/exec" width="100%" height="750px" scrolling="no"  ></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfycbwLi8UX-aBjwUe9pStJmL5CEemdFLD6Z3WPtyRW5ecWe4SojSYBUvsKQAKNEGSxRUpXVA/exec"></iframe>
 </body>
 </html>
