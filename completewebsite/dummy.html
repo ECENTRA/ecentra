@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_top">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif; /* Apply Google Font */
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            text-align: center;
+            height: 100vh; /* Make sure the body takes the full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+        h2 {
+            color: white;
+            padding: 20px;
+            margin-bottom: 30px; /* Add some space between title and table */
+            font-size: 28px; /* Increase title size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better visibility */
+        }
+        table {
+            width: 90%; /* Adjust to fill more space */
+            max-width: 1200px; /* Optional: set max-width for large screens */
+            margin: auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            animation: glowingBorder 3s ease-in-out infinite; /* Glowing border animation */
+        }
+
+        /* Glowing border animation */
+        @keyframes glowingBorder {
+            0% {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+            50% {
+                border-color: rgba(0, 255, 0, 0.7);
+            }
+            100% {
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        th, td {
+            padding: 15px; /* Increased padding for better readability */
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
+        }
+
+        th {
+            background: #4CAF50;
+            color: white;
+            font-weight: 700; /* Bold font for headers */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05); /* Slight zoom effect */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Media Query for Tablets and Smaller Devices */
+        @media screen and (max-width: 768px) {
+            table {
+                width: 95%; /* Take more width on smaller devices */
+            }
+            th, td {
+                padding: 10px; /* Reduce padding for smaller screens */
+            }
+            h2 {
+                font-size: 24px; /* Make title smaller */
+            }
+        }
+
+        /* Media Query for Mobile Devices */
+        @media screen and (max-width: 480px) {
+            table {
+                width: 100%; /* Full width on very small screens */
+                font-size: 12px; /* Smaller font size for better readability */
+            }
+            th, td {
+                padding: 8px; /* Less padding on mobile */
+            }
+            h2 {
+                font-size: 20px; /* Reduce title size even more for mobile */
+                padding: 10px; /* Reduce padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Display Google Sheet Data on Webpage</h2>
+    
+    <!-- Table to display data -->
+    <table border="1">
+        <!-- Using Google Apps Script's `getSheetData()` method -->
+        <? var tableData = getSheetData(); ?>
+        
+        <!-- Loop through the rows of the tableData -->
+        <? for(var i = 0; i < tableData.length; i++) { ?>
+            <? if(i == 0) { ?>
+                <!-- Header row -->
+                <tr>
+                    <? for(var j = 0; j < tableData[i].length; j++) { ?>
+                        <th><?= tableData[i][j] ?></th>
+                    <? } ?>
+                </tr>
+            <? } else { ?>
+                <!-- Data rows -->
+                <tr>
+                    <? for(var j = 0; j < tableData[i].length; j++) { ?>
+                        <td><?= tableData[i][j] ?></td>
+                    <? } ?>
+                </tr>
+            <? } ?>
+        <? } ?>
+    </table>
+    
+    <!-- Emoji section (optional based on the content) -->
+    <div class="emoji">
+        🌡️ for Temperature and 💧 for Humidity.
+        <!-- Example emojis - you can dynamically add more based on your data -->
+    </div>
+</body>
+</html>
