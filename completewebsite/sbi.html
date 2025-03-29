@@ -25,5 +25,16 @@
 <body>
     
     <iframe src="https://script.google.com/macros/s/AKfycbwvSSP-SZKkhf2U5K5M4Q78xEuU4x2zFHMy0FkYn52bcD4biC1VAlNSARb-PWkcJ8W_2w/exec"></iframe>
+    <script>
+        setInterval(() => {
+            fetch(window.location.href, { cache: "no-store" })
+                .then(response => response.text())
+                .then(html => {
+                    document.open();
+                    document.write(html);
+                    document.close();
+                });
+        }, 5000); // Refresh every 5 seconds
+    </script>
 </body>
 </html>
