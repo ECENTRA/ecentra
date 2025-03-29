@@ -30,11 +30,24 @@
             fetch(window.location.href, { cache: "no-store" })
                 .then(response => response.text())
                 .then(html => {
-                    document.open();
-                    document.write(html);
-                    document.close();
-                });
-        }, 5000); // Refresh every 5 seconds
+                    // Create a temporary DOM element to hold the new page content
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+    
+                    // Find the content you want to replace (for example, replace the content in an element with id 'content')
+                    const newContent = tempDiv.querySelector('#content'); // Change the selector as needed
+    
+                    // Find the element on the page where you want to update the content
+                    const currentContent = document.querySelector('#content'); // Same selector as above
+    
+                    // Only update the content if it has changed
+                    if (newContent && currentContent && newContent.innerHTML !== currentContent.innerHTML) {
+                        currentContent.innerHTML = newContent.innerHTML;
+                    }
+                })
+                .catch(error => console.error('Error fetching new content:', error));
+        }, 5000); // Refresh content every 5 seconds
     </script>
+    
 </body>
 </html>
