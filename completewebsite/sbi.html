@@ -24,12 +24,12 @@
 </head>
 <body>
     
-    <iframe src="https://script.google.com/macros/s/AKfycbyqJPNd2-FYFpHhCUa-bOmez4SCSeLpyHwFlY9JiSQ4YfzqfVOVfP9x9AGjOmpeUW1KAQ/exec"></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfycbyd9EyRsBnRs5RZ1pbJyFzz_L789YSLSYHyE5hbPrSDgo55AgEMIiJhQn0Ko9hNiuvNLw/exec"></iframe>
     <script>
         setInterval(() => {
             fetch(window.location.href, { cache: "no-store" })
                 .then(response => response.text())
-                .then(html => {
+                .then(html =>{ 
                     // Create a temporary DOM element to hold the new page content
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = html;
