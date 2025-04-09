@@ -54,10 +54,22 @@
                            #chart { width: 90%; max-width: 1200px; height: 400px; margin: 20px auto; background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); }
                             @media (max-width: 768px)
                              { 
-                                h2{
-                                    font-size: 30px;
-                                    margin-top: 30px;
-                                }
+                                h2 {
+        font-size: 30px;
+        margin-top: 40px; /* reduced from 30px */
+        margin-bottom: 10px; /* reduce gap below heading */
+        padding: 10px; /* reduce padding */
+    }
+
+    table {
+        width: 95%;
+        font-size: 10px;
+        margin-top: 30px; /* remove extra margin if added */
+    }
+
+    #chart {
+        margin-top: 30px; /* pull graph closer */
+    }
                                 table { width: 95%; font-size: 10px; }
 
                               th, td { padding: 8px; } 
