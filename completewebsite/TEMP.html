@@ -1,0 +1,197 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <base target="_top"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    </script>
+     <style> * { margin: 0; padding: 0; box-sizing: border-box; } 
+     body { font-family: 'Roboto', sans-serif; background: url('https://static.vecteezy.com/system/resources/thumbnails/026/186/529/small/twillight-sky-blurred-background-ai-generated-photo.jpg') no-repeat center center fixed;
+      background-size: cover; 
+      text-align: center;
+       min-height: 100vh; 
+       display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+         align-items: center; 
+         verflow-y: auto;
+          } 
+
+           h2 {
+                font-family: "Ga Maamli", sans-serif;
+                color: #fff;
+                padding: 20px;
+                margin-bottom: 30px;
+                font-size: 45px;
+                text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+                animation: fadeInUp 1.5s ease-out forwards;
+                opacity: 0;
+            }
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+              table
+               { width: 90%; max-width: 1200px; margin: auto; border-collapse: collapse; background: rgba(255, 255, 255, 0.15); border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.18); margin-bottom: 30px; 
+               }
+                th, td {
+                   padding: 15px; text-align: center; border-bottom: 1px solid rgba(255, 255, 255, 0.2); color: #fff; } th { background: rgba(72, 84, 96, 0.5);
+                    } 
+                    th.ldr-header { 
+                      background: rgba(34, 139, 34, 0.7) !important; 
+                      }
+                       tr:hover
+                        {
+                           background-color: rgba(255, 255, 255, 0.1); transform: scale(1.03); transition: transform 0.3s ease-in-out; 
+                           } 
+                           #chart { width: 90%; max-width: 1200px; height: 400px; margin: 20px auto; background: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; backdrop-filter: blur(10px); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); }
+                            @media (max-width: 768px)
+                             { 
+                                h2{
+                                    font-size: 30px;
+                                    margin-top: 30px;
+                                }
+                                table { width: 95%; font-size: 10px; }
+
+                              th, td { padding: 8px; } 
+                            } 
+          </style>
+           </head> 
+           <body> 
+            <h2>Live Weather Monitoring</h2>
+             <table border="1" id="data-table">
+               <tbody> <? var tableData = getSheetData(); ?> <? for(var i = 0; i < tableData.length; i++) { ?> <? if(i == 0) { ?> <tr> <? for(var j = 0; j < tableData[i].length; j++) { ?> <? if(tableData[i][j] === "LDR Value") { ?> <th class="ldr-header"><?= tableData[i][j] ?></th> <? } else { ?> <th><?= tableData[i][j] ?></th> <? } ?> <? } ?> </tr> <? } else { ?> <tr> <? for(var j = 0; j < tableData[i].length; j++) { ?> <td><?= tableData[i][j] ?></td> <? } ?> </tr> <? } ?> <? } ?> </tbody> </table>
+    <canvas id="chart"></canvas>
+    
+    <script>
+        let chart;
+    
+        function fetchLatestData() {
+            google.script.run.withSuccessHandler(updateTable).getSheetData();
+        }
+    
+        function updateTable(tableData) {
+            const table = document.getElementById('data-table');
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+    
+            const timestamps = [];
+            const tempValues = [];
+            const humidityValues = [];
+            const ldrValues = [];
+    
+            for (let i = 1; i < tableData.length; i++) {
+                const row = tableData[i];
+                if (row.every(cell => cell === "")) continue;
+    
+                timestamps.push(row[0]);
+                tempValues.push(row[1]);
+                humidityValues.push(row[2]);
+                ldrValues.push(row[3]);
+    
+                const newRow = table.insertRow();
+                for (let j = 0; j < row.length; j++) {
+                    const cell = newRow.insertCell();
+                    cell.textContent = row[j];
+                }
+            }
+    
+            updateChart(
+                timestamps.slice().reverse(),
+                tempValues.slice().reverse(),
+                humidityValues.slice().reverse(),
+                ldrValues.slice().reverse()
+            );
+        }
+    
+        function updateChart(labels, tempData, humidityData, ldrData) {
+            const ctx = document.getElementById('chart').getContext('2d');
+            if (!chart) {
+                chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'Temperature',
+                                data: tempData,
+                                backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                                borderRadius: 50,
+                                borderWidth: 1,
+                                hoverBackgroundColor: 'rgba(255, 99, 132, 1)'
+                            },
+                            {
+                                label: 'Humidity',
+                                data: humidityData,
+                                backgroundColor: 'rgba(54, 162, 235, 0.8)',
+                                borderRadius: 50,
+                                borderWidth: 1,
+                                hoverBackgroundColor: 'rgba(54, 162, 235, 1)'
+                            },
+                            {
+                                label: 'LDR Value',
+                                data: ldrData,
+                                backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                                borderRadius: 50,
+                                borderWidth: 1,
+                                hoverBackgroundColor: 'rgba(75, 192, 192, 1)'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        animation: {
+                            duration: 1200,
+                            easing: 'easeOutBounce'
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#fff',
+                                    font: {
+                                        weight: 'bold'
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0,0,0,0.7)',
+                                titleColor: '#fff',
+                                bodyColor: '#fff',
+                                borderColor: '#ccc',
+                                borderWidth: 1
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: '#fff' },
+                                grid: { color: 'rgba(255,255,255,0.1)' }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                ticks: { color: '#fff' },
+                                grid: { color: 'rgba(255,255,255,0.1)' }
+                            }
+                        }
+                    }
+                });
+            } else {
+                chart.data.labels = labels;
+                chart.data.datasets[0].data = tempData;
+                chart.data.datasets[1].data = humidityData;
+                chart.data.datasets[2].data = ldrData;
+                chart.update();
+            }
+        }
+    
+        setInterval(fetchLatestData, 5000);
+        fetchLatestData();
+    </script>
+    </body> </html>
