@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f0036, #4b145c, #310047);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #fff;
+      text-shadow: 0 2px 5px #000;
+      margin-bottom: 30px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      font-family: monospace;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: 1px solid #b21065;
+      border-radius: 20px;
+      background-image: 
+        linear-gradient(to bottom, #fff9, transparent 50% 90%, #f5cbbc99),
+        repeating-linear-gradient(60deg,#bc058255 0 10px, transparent 10px 20px),
+        linear-gradient(to bottom, #EF08A6, #ee6c8f);
+      color: #fff;
+      font-family: monospace;
+      font-weight: bold;
+      text-shadow: 0 1px 0 #efb7de;
+      box-shadow: 
+        0 10px 0 #0005,
+        0 5px 0 #BD1360,
+        0 4px 0 7px #fff,
+        0 0 30px 10px #e260ae;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    button:active {
+      box-shadow: 
+        0 0px 0 #0005,
+        0 0px 0 #BD1360,
+        0 0px 0 7px #fff,
+        0 0 30px 30px #e260ae;
+      transform: translateY(5px);
+    }
+
+    .notification {
+      color: #ff6347;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .glass-container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      input[type="password"] {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      button {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container">
+    <h2>Login</h2>
+    <input type="password" id="password" placeholder="Enter your password" />
+    <button onclick="checkPassword()">Submit</button>
+    <div id="notification" class="notification"></div>
+  </div>
+
+  <script>
+    const predefinedPassword = "1234"; // Define your password here
+    const successPage = "mahi.html"; // Your destination page
+
+    function checkPassword() {
+      const enteredPassword = document.getElementById("password").value;
+      const notification = document.getElementById("notification");
+
+      if (enteredPassword === predefinedPassword) {
+        // Redirect to the desired page if password matches
+        window.location.href = successPage;
+      } else {
+        // Show notification if password is wrong
+        notification.innerHTML = "Wrong password, please try again!";
+      }
+    }
+  </script>
+</body>
+</html>

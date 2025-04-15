@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hand Gesture Controller</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f0036, #4b145c, #310047);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 600px;
+      width: 95%;
+      text-align: center;
+    }
+
+    h2 {
+      color: #fff;
+      text-shadow: 0 2px 5px #000;
+      margin-bottom: 30px;
+    }
+
+    .led-box {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .led-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .led-label {
+      padding: 6px 15px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-family: monospace;
+      text-shadow: 0 1px 2px #0004;
+    }
+
+    .led-1 { background: green; color: white; }
+    .led-2 { background: red; color: white; }
+    .led-3 { background: blue; color: white; }
+    .led-4 { background: yellow; color: black; }
+    .led-5 { background: white; color: black; }
+
+    button {
+      padding: 5px 20px;
+      margin: 5px;
+      border: 1px solid #b21065;
+      border-radius: 20px;
+      background-image: 
+        linear-gradient(to bottom, #fff9, transparent 50% 90%, #f5cbbc99),
+        repeating-linear-gradient(60deg,#bc058255 0 10px, transparent 10px 20px),
+        linear-gradient(to bottom, #EF08A6, #ee6c8f);
+      color: #fff;
+      font-family: monospace;
+      font-weight: bold;
+      text-shadow: 0 1px 0 #efb7de;
+      box-shadow: 
+        0 10px 0 #0005,
+        0 5px 0 #BD1360,
+        0 4px 0 7px #fff,
+        0 0 30px 10px #e260ae;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    button:active {
+      box-shadow: 
+        0 0px 0 #0005,
+        0 0px 0 #BD1360,
+        0 0px 0 7px #fff,
+        0 0 30px 30px #e260ae;
+      transform: translateY(5px);
+    }
+
+    @media (max-width: 600px) {
+      .glass-container {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .led-box {
+        padding: 10px;
+        height: auto;
+      }
+
+      .led-control {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      button {
+        padding: 5px 15px;
+        font-size: 14px;
+      }
+
+      .led-label {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container">
+    <h2>Hand Guesture Controller</h2>
+    <div id="buttons"></div>
+  </div>
+
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzUFaLZcqnr6hNFCnQmXo3D0zbvXPJQOEHEXtTVJk3b7UaCd5TfDBbrROqENes0nZOG/exec";
+
+    for (let i = 1; i <= 5; i++) {
+      const container = document.getElementById("buttons");
+      container.innerHTML += `
+        <div class="led-box">
+          <div class="led-control">
+            <span class="led-label led-${i}">LED ${i}</span>
+            <button onclick="updateLED(${i}, 1)">ON</button>
+            <button onclick="updateLED(${i}, 0)">OFF</button>
+          </div>
+        </div>`;
+    }
+
+    function updateLED(led, state) {
+      fetch(`${scriptURL}?led=${led}&state=${state}`)
+        .then(res => res.text())
+        .then(data => console.log(data))
+        .catch(err => console.error("Error:", err));
+    }
+  </script>
+</body>
+</html>
